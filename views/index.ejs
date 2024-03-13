@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula de EJS</title>
+</head>
+<body>
+    <h1>classroom of EJS</h1>
+    <hr>
+    <h3> List of Questions</h3>
+
+    <%= nome %>
+    <%= lang %>
+    <% if (msg == true) {%>
+        <h3> Mensagem de erro 4000!</h3>
+    <% }%>
+    
+    <% comp.forEach(function(comp){%>
+        <hr>
+        <h3><%= comp.nome%></h3>
+        <h4><%= comp.preco%></h4>
+
+    <%})%>
+</body>
+</html>
