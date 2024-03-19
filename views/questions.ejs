@@ -11,7 +11,11 @@
             </div>
 
             <div class="card-body">
-                <form method="post" action="/saveQuestions">
+                <form method="post" action="/saveQuestions">    <!-- No formulário ele só entende rotas do tipo POST-->
+                    
+                    <!-- Utilizamos o método POST por fins de segurança, para que as informações
+                        fornecidas nos formulários, seja passados dentro da requisição e não na URL.-->
+
                     <label> Título</label>
                     <input type="text" placeholder="Título" class="form-control" name="title">
                     <br><label>Descrição</label>

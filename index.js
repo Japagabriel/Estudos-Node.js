@@ -30,7 +30,7 @@ app.get("/perguntas", (require, res) => {
     res.render("questions");
 });
 
-app.post("/saveQuestions", (req, res) => {
+app.post("/saveQuestions", (req, res) => {  // Criando rota do tipo post para receber as informações do formulário de perguntas.
     var title = req.body.title;
     var description= req.body.description;
     questionModel.create({
