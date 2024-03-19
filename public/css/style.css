@@ -16,4 +16,22 @@ h1{
 
 #form-questions{
     margin-top: 5vh;
+    border-radius: 10px;
+}
+
+#cardHomeQuestion{
+    border-radius: 10px;
+
+}
+
+#ButAskQ{               /*Button of <a href="Perguntas"> Perguntar </a> --> views/index.ejs */
+    border-radius: 10px;
+}
+
+#ButResQ{                /*Button of card-footer --> views/index.ejs */
+    border-radius: 10px;
+}
+
+#ButFormQ{               /*Button of Forms Questions --> views/questions.ejs */
+    border-radius: 10px;
 }

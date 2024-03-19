@@ -22,11 +22,18 @@ app.use(bodyParser.urlencoded({extended: false})); // Irá decodificar os dados 
 app.use(bodyParser.json()); //Torna possível a leitura desses dados através de um arquivo json.
 
 // ROTAS 
-app.get("/",(req,res) => {      //cria uma rota http para uma página no localhost
-    res.render("index");            //a página que será construída, está dentro do arquivo index.ejs que está dentro da pasta "view".
+app.get("/",(req,res) => {      //cria uma rota http
+    questionModel.findAll({raw: true, order:[    // o Raw trás informações minimizadas do BD e o order ordena a lista de perguntas da tabela.
+        ["id","desc"]   // primeiras "" informa porqual coluna irá ordenar, o segundo "" informa se será crescente (ASC) ou decrecente (DESC).
+    ]} ) .then(Allquestions => { // lista todas as perguntas e salva na variável Allquestions.  
+        res.render("index", { //a página que será construída, está dentro do arquivo index.ejs que está dentro da pasta "view".
+            Allquestions: Allquestions
+        });            
+
+    }); 
 });
 
-app.get("/perguntas", (require, res) => {
+app.get("/questions", (require, res) => {
     res.render("questions");
 });
 
