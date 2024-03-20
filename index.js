@@ -51,12 +51,15 @@ app.post("/saveQuestions", (req, res) => {  // Criando rota do tipo post para re
 app.get("/questions/:id", (req,res) => {
     var id = req.params.id;
     questionModel.findOne({  //busca um dado específico no BD.
-        where:{ide: id}
+        where:{id: id}
     }).then(foundQuestion => {
         if(foundQuestion != undefined){ //found value
-
+            res.render("pageQuestions",{
+                foundQuestion: foundQuestion,
+            });
+            
         }else{                         //not found
-
+            res.redirect("/");
         }
     })
 });
